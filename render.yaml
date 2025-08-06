@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: shorts-api
+    env: python
+    builCommand: ""
+    startCommand: "python app.py"
+    plan: free
