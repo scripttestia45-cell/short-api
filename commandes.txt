@@ -1,0 +1,32 @@
+curl -X POST http://127.0.0.1:5000/telecharger-video 
+-H "Content-Type: application/json" 
+-d '{"url": "https://www.youtube.com/watch?v=jJ6MvDoxPFg"}'
+
+{
+    "video_id":"7d28f842-8054-4f89-aac0-9bc5a8e092fa",
+    "video_path":"videos/7d28f842-8054-4f89-aac0-9bc5a8e092fa.mp4"
+}
+
+
+
+
+
+curl -X POST http://127.0.0.1:5000/generate-texte 
+-H "Content-Type: application/json" 
+-d '{"url": "https://www.youtube.com/watch?v=jJ6MvDoxPFg"}'  
+
+
+
+
+curl -X POST http://localhost:5000/generate-short \
+  -H "Content-Type: application/json" \
+  -d '{
+    "video_path": "videos/7d28f842-8054-4f89-aac0-9bc5a8e092fa.mp4",
+    "timestamps": [
+      { "start": "00:05:47", "end": "00:06:18" },
+      { "start": "00:04:49", "end": "00:05:21" },
+      { "start": "00:08:41", "end": "00:09:12" },
+      { "start": "00:07:13", "end": "00:07:44" },
+      { "start": "00:03:50", "end": "00:04:21" }
+    ]
+  }'
